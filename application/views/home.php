@@ -9,7 +9,7 @@
       content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
     />
     <meta name="generator" content="Hugo 0.88.1" />
-    <title>Welcome | Sitename</title>
+    <title>Welcome | Site Name</title>
     <link rel="shortcut icon" href="CMS.png" type="image/x-icon" />
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.css" rel="stylesheet" />
