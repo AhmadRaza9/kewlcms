@@ -39,19 +39,12 @@
         <div>
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a
-                class="nav-link active btn btn-primary"
-                aria-current="page"
-                href="#"
-                >Home</a
-              >
+              <a class="nav-link active btn btn-primary" href="<?php echo base_url(); ?>">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link text-primary" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-primary">Contact</a>
-            </li>
+
+              <?php foreach($menu_items as $item):?>
+                <li class="nav-item"><a class="nav-link text-primary" href="<?php echo base_url(); ?>articles/view/<?php echo $item->id; ?>"><?php echo $item->title; ?></a></li>
+              <?php endforeach; ?>
           </ul>
         </div>
       </div>
@@ -59,13 +52,11 @@
 
     <main class="container">
       <div class="bg-light p-5 rounded text-center">
-        <h1>Jumbotron Heading</h1>
+        <h1><?php echo $this->global_data[2];?></h1>
         <p class="lead">
-          This example is a quick exercise to illustrate how the top-aligned
-          navbar works. As you scroll, this navbar remains in its original
-          position and moves with the rest of the page.
+         <?php echo $this->global_data[3];?>
         </p>
-        <a class="btn btn-lg btn-success">View navbar docs &raquo;</a>
+        <a class="btn btn-lg btn-success"><?php echo $this->global_data[4];?> &raquo;</a>
       </div>
     </main>
 

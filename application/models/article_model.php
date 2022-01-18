@@ -8,6 +8,7 @@
  */
 
 class Article_model extends CI_Model{
+
     public function get_articles($order_by = null, $sort='DESC', $limit = null, $offset = 0) {
         $this->db->select('a.*, b.name as category_name, c.first_name, c.last_name');
         $this->db->from('articles as a');
@@ -19,18 +20,58 @@ class Article_model extends CI_Model{
         $query = $this->db->get();
         return $query->result();
     }
+
+    public function get_menu_items(){
+        $this->db->where('is_menu', 1);
+        $this->db->order_by('ar_order');
+        $query = $this->db->get('articles');
+        return $query->result();
+    }
+
 }
 
-// $articles_model = new Article_model();
-// $articles = $articles_model->get_articles();
-
-// foreach($articles as $article){
-//     echo "<p>$article->title</p>";
-//     echo "<p>$article->body</p>";
-//     echo "<p>$article->category_name</p>";
-//     echo "<p>$article->first_name $article->last_name</p>";
-   
-// }
 
 
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+ $articles_model = new Article_model();
+ $articles = $articles_model->get_articles();
+
+ foreach($articles as $article){
+     echo "<p>$article->title</p>";
+     echo "<p>$article->body</p>";
+     echo "<p>$article->category_name</p>";
+     echo "<p>$article->first_name $article->last_name</p>";
+   
+ } -->
