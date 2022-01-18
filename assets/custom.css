@@ -2,3 +2,12 @@ td {
   padding-top: 20px !important;
   padding-bottom: 20px !important;
 }
+
+#search_input {
+  width: 100%;
+}
+
+#dash_nav_link {
+  width: 100%;
+  display: flex;
+}

@@ -10,7 +10,7 @@
     />
     <meta name="generator" content="Hugo 0.88.1" />
     <title>Dashboard | Welcome</title>
-    <link rel="shortcut icon" href="CMS.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../assets/images/CMS.png" type="image/x-icon" />
 
     <!-- Bootstrap core CSS -->
     <link href="../../../assets/custom.css" rel="stylesheet" />
@@ -38,8 +38,8 @@
     <header
       class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"
     >
-      <a class="navbar-brand col-md-3 col-lg-2 me-0 p-0" href="index.html">
-          <img src="<?php echo base_url(); ?>assets/images/<?php echo $this->global_data['site_logo'];?>" alt="" width="100px"></a>
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 p-0" href="<?php echo base_url(); ?>index.php/admin/dashboard">
+          <img src="<?php echo base_url(); ?>assets/images/<?php echo $this->global_data['site_logo'];?>" alt="" width="109px"></a>
       <button
         class="navbar-toggler position-absolute d-md-none collapsed"
         type="button"
@@ -51,15 +51,11 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <input
-        class="form-control form-control-dark w-100"
-        type="text"
-        placeholder="Search Article..."
-        aria-label="Search"
-      />
+      <input class="form-control form-control-dark" type="text" id="search_input" placeholder="Search Article..."/>
       <div class="navbar-nav">
-        <div class="nav-item text-nowrap">
-          <a class="nav-link px-3" href="#">Log out</a>
+        <div class="nav-item text-nowrap" id="dash_nav_link">
+          <a class="nav-link px-3" href="<?php echo base_url(); ?>index.php" target="_blank">View Site</a>
+          <a class="nav-link px-3" href="<?php echo base_url(); ?>index.php/admin/users/logout">Log out</a>
         </div>
       </div>
     </header>
