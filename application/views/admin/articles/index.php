@@ -1,7 +1,10 @@
-          <div class="pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Dashboard</h1>
+<div class="pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Articles</h1>
           </div>
-          <h2>Articles</h2>
+          <div class="d-flex justify-content-between align-items-center">
+            <h2></h2>
+            <a href="add_article.html" class="btn btn-success">Add Article</a>
+          </div>
           <div class="table-responsive">
             <table class="table table-striped table-sm">
               <thead>
@@ -23,66 +26,16 @@
                         <td><?php echo $article->first_name; ?> <?php echo $article->last_name; ?></td>
                         <td><?php echo date("F j, Y, g:i a", strtotime($article->created)); ?></td>
                         <td>
-                            <a href="articles/edit/<?php echo $article->id; ?>" class="btn btn-primary">Edit</a>
-                            <a href="articles/unpublish/<?php echo $article->id; ?>" class="btn btn-dark">Unpublish</a>
-                            <a href="articles/delete<?php echo $article->id; ?>" class="btn btn-danger">Delete</a>
+                            <a href="edit/<?php echo $article->id; ?>" class="btn btn-primary">Edit</a>
+                            <?php if ($article->is_published == 1): ?>
+                            <a href="unpublish/<?php echo $article->id; ?>" class="btn btn-dark">Unpublish</a>
+                            <?php elseif ($article->is_published == 0): ?>
+                            <a href="publishe/<?php echo $article->id; ?>" class="btn btn-success">Published</a>
+                            <?php endif;?>
+                            <a href="delete<?php echo $article->id; ?>" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
                 <?php endforeach;?>
               </tbody>
             </table>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <h2>Latest Categories</h2>
-              <div class="table-responsive">
-                <table class="table table-striped">
-                  <thead>
-                    <tr>
-                      <th width="70">#</th>
-                      <th>Name</th>
-                      <th>Actions</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php foreach ($categories as $category): ?>
-                        <tr>
-                            <td><?php echo $category->id; ?></td>
-                            <td><?php echo $category->name; ?></td>
-                            <td>
-                                <a href="categories/edit/<?php echo $category->id; ?>" class="btn btn-primary">Edit</a>
-                                <a href="categories/delete/<?php echo $category->id; ?>" class="btn btn-danger">Delete</a>
-                            </td>
-                        </tr>
-                    <?php endforeach;?>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <h2>Latest Users</h2>
-              <div class="table-responsive">
-                <table class="table table-striped">
-                  <thead>
-                    <tr>
-                      <th width="70">#</th>
-                      <th>Username</th>
-                      <th>Actions</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php foreach ($users as $user): ?>
-                        <tr>
-                            <td><?php echo $user->id; ?></td>
-                            <td><?php echo $user->username; ?></td>
-                            <td>
-                                <a href="users/edit/<?php echo $user->id; ?>" class="btn btn-primary">Edit</a>
-                                <a href="users/delete/<?php echo $user->id; ?>" class="btn btn-danger">Delete</a>
-                            </td>
-                        </tr>
-                    <?php endforeach;?>
-                  </tbody>
-                </table>
-              </div>
-            </div>
           </div>
