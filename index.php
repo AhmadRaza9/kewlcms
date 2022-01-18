@@ -1,6 +1,6 @@
 <?php
 
-// echo "index.php";
+
 /**
  * CodeIgniter
  *

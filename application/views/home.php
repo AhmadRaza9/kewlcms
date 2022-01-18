@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,7 +35,7 @@
     <nav class="navbar navbar-expand-md navbar-dark mb-4">
       <div class="container">
         <div>
-          <a class="navbar-brand text-dark" href="#">Top navbar</a>
+          <a class="navbar-brand text-dark" href="http://kewlcms.test/">Top navbar</a>
         </div>
         <div>
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
@@ -43,7 +44,7 @@
             </li>
 
               <?php foreach($menu_items as $item):?>
-                <li class="nav-item"><a class="nav-link text-primary" href="<?php echo base_url(); ?>articles/view/<?php echo $item->id; ?>"><?php echo $item->title; ?></a></li>
+                <li class="nav-item"><a class="nav-link text-primary" href="http://kewlcms.test/index.php/articles/view/<?php echo $item->id; ?>"><?php echo $item->title; ?></a></li>
               <?php endforeach; ?>
           </ul>
         </div>
@@ -63,7 +64,7 @@
           <li class="list-group-item">
             <h4><?php echo $article->title;?></h4>
             <p><?php echo word_limiter($article->body, 20); ?></p>
-            <p><a class="btn btn-lg btn-primary btn-sm" href="<?php echo base_url(); ?>articles/view/<?php echo $article->id; ?>"><?php echo $this->global_data[4];?></a></p>
+            <p><a class="btn btn-lg btn-primary btn-sm" href="http://kewlcms.test/index.php/articles/view/<?php echo $article->id; ?>"><?php echo $this->global_data[4];?></a></p>
           </li>
         <?php endforeach; ?>
       </ul>
