@@ -9,10 +9,10 @@
       content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
     />
     <meta name="generator" content="Hugo 0.88.1" />
-    <title>Welcome | Site Name</title>
+    <title>Welcome | <?php echo $this->global_data[1];?></title>
     <link rel="shortcut icon" href="CMS.png" type="image/x-icon" />
     <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.css" rel="stylesheet" />
+    <link href="<?php echo base_url(); ?>assets/bootstrap.css" rel="stylesheet" />
 
     <style>
       .bd-placeholder-img {
@@ -69,6 +69,6 @@
       </div>
     </main>
 
-    <script src="/js/bootstrap.js"></script>
+    <script src="<?php echo base_url(); ?>assets/bootstrap.js"></script>
   </body>
 </html>
