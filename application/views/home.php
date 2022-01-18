@@ -58,8 +58,16 @@
         </p>
         <a class="btn btn-lg btn-success"><?php echo $this->global_data[4];?> &raquo;</a>
       </div>
+      <ul class="home-content p-4 list-group list-group-flush">
+        <?php foreach($articles as $article): ?>
+          <li class="list-group-item">
+            <h4><?php echo $article->title;?></h4>
+            <p><?php echo word_limiter($article->body, 20); ?></p>
+            <p><a class="btn btn-lg btn-primary btn-sm" href="<?php echo base_url(); ?>articles/view/<?php echo $article->id; ?>"><?php echo $this->global_data[4];?></a></p>
+          </li>
+        <?php endforeach; ?>
+      </ul>
     </main>
-
     <script src="<?php echo base_url(); ?>assets/bootstrap.js"></script>
   </body>
 </html>
