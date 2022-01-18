@@ -10,8 +10,8 @@
       content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
     />
     <meta name="generator" content="Hugo 0.88.1" />
-    <title>Welcome | <?php echo $this->global_data[1];?></title>
-    <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/images/CMS.png" type="image/x-icon" />
+    <title>Welcome | <?php echo $this->global_data["site_title"];?></title>
+    <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/images/<?php echo $this->global_data["favicon"];?>" type="image/x-icon" />
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url(); ?>assets/bootstrap.css" rel="stylesheet" />
 
@@ -35,7 +35,7 @@
     <nav class="navbar navbar-expand-md navbar-dark mb-4">
       <div class="container">
         <div>
-          <a class="navbar-brand text-dark" href="http://kewlcms.test/"><img src="<?php echo base_url(); ?>assets/images/cms_logo.png" alt=""></a>
+          <a class="navbar-brand text-dark" href="http://kewlcms.test/"><img src="<?php echo base_url(); ?>assets/images/<?php echo $this->global_data['site_logo'];?>" alt=""></a>
         </div>
         <div>
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
