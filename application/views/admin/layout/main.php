@@ -16,6 +16,7 @@
     <link href="../../../assets/custom.css" rel="stylesheet" />
     <link href="../../../assets/bootstrap.css" rel="stylesheet" />
     <link href="../../../assets/dashboard.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
     <style>
       .bd-placeholder-img {
@@ -37,7 +38,7 @@
   <body>
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
       <a class="navbar-brand col-md-3 col-lg-2 me-0 p-0" href="<?php echo base_url(); ?>index.php/admin/dashboard">
-          <img src="<?php echo base_url(); ?>assets/images/<?php echo $this->global_data['site_logo'];?>" alt="" width="109px"></a>
+          <img src="<?php echo base_url(); ?>assets/images/<?php echo $this->global_data['site_logo']; ?>" alt="" width="109px"></a>
       <button
         class="navbar-toggler position-absolute d-md-none collapsed"
         type="button"
@@ -50,21 +51,21 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <?php $attributes = array('class' => 'navbar-form navbar-right'); ?>
+      <?php $attributes = array('class' => 'navbar-form navbar-right');?>
       <?php echo form_open('admin/articles/index', $attributes); ?>
       <?php $data = array(
-          'name'        => 'keywords',
-          'class'       => 'form-control',
-          'placeholder' => 'Search Articles...'
-      ); 
-        echo form_input($data);
-      ?>
+    'name' => 'keywords',
+    'class' => 'form-control',
+    'placeholder' => 'Search Articles...',
+);
+echo form_input($data);
+?>
       <?php echo form_close(); ?>
 
 
       <!-- <input class="form-control form-control-dark" type="text" id="search_input" placeholder="Search Article..."/> -->
-      
-      
+
+
       <div class="navbar-nav">
         <div class="nav-item text-nowrap" id="dash_nav_link">
           <a class="nav-link px-3" href="<?php echo base_url(); ?>index.php" target="_blank">View Site</a>
@@ -82,38 +83,33 @@
           <div class="position-sticky pt-3">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="index.html"
-                >
-                  <span data-feather="home"></span>
-                  Dashboard
+                <a class="nav-link active" href="http://kewlcms.test/index.php/admin/dashboard">
+                  <i class="bi bi-house-fill"></i> Dashboard
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="articles.html">
+                <a class="nav-link" href="http://kewlcms.test/index.php/admin/articles/index">
                   <span data-feather="file"></span>
-                  Articles
+                  <i class="bi bi-wallet-fill"></i> Articles
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="categories.html">
+                <a class="nav-link" href="http: //kewlcms.test/index.php/admin/categories">
                   <span data-feather="shopping-cart"></span>
-                  Categories
+                  <i class="bi bi-tags-fill"></i> Categories
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="users.html">
+                <a class="nav-link" href="http: //kewlcms.test/index.php/admin/users">
                   <span data-feather="users"></span>
-                  Users
+                  <i class="bi bi-file-earmark-person-fill"></i> Users
                 </a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="settings.html">
+                <a class="nav-link" href="http: //kewlcms.test/index.php/admin/settings">
                   <span data-feather="layers"></span>
-                  Settings
+                  <i class="bi bi-gear-fill"></i> Settings
                 </a>
               </li>
             </ul>
@@ -149,7 +145,7 @@
                     <a href="edit_article.html" class="btn btn-dark"
                       >Unpublish</a
                     >
-                          <?php $attributes = array('class' => 'navbar-form navbar-right'); ?>
+                          <?php $attributes = array('class' => 'navbar-form navbar-right');?>
 
                     <a href="edit_article.html" class="btn btn-danger"
                       >Delete</a
