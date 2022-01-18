@@ -17,6 +17,7 @@ class Dashboard extends MY_Controller
         // View
         $data['main_content'] = 'admin/articles/index';
         $this->load->view('admin/layout/main', $data);
+
     }
 
 }
