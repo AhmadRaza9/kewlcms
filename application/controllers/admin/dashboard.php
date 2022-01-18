@@ -1,8 +1,10 @@
-<?php 
+<?php
 
-class Dashboard extends MY_Controller{
-    
-    public function index(){
+class Dashboard extends MY_Controller
+{
+
+    public function index()
+    {
         // Get Articles
         $data['articles'] = $this->Article_model->get_articles('id', 'DESC', 10);
 
@@ -13,11 +15,8 @@ class Dashboard extends MY_Controller{
         $data['users'] = $this->User_model->get_users('id', 'DESC', 5);
 
         // View
-        $data['main_content'] = 'index.php/admin/dashboard/index';
+        $data['main_content'] = 'admin/articles/index';
         $this->load->view('admin/layout/main', $data);
     }
 
-
 }
-
-?>
