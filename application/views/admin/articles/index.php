@@ -15,24 +15,20 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>random</td>
-                  <td>data</td>
-                  <td>placeholder</td>
-                  <td>text</td>
-                  <td>
-                    <a href="edit_article.html" class="btn btn-primary">Edit</a>
-                    <a href="edit_article.html" class="btn btn-dark"
-                      >Unpublish</a
-                    >
-                          <?php $attributes = array('class' => 'navbar-form navbar-right');?>
-
-                    <a href="edit_article.html" class="btn btn-danger"
-                      >Delete</a
-                    >
-                  </td>
-                </tr>
+                <?php foreach ($articles as $article): ?>
+                    <tr>
+                        <td><?php echo $article->id; ?></td>
+                        <td><?php echo $article->title; ?></td>
+                        <td><?php echo $article->category_name; ?></td>
+                        <td><?php echo $article->first_name; ?> <?php echo $article->last_name; ?></td>
+                        <td><?php echo date("F j, Y, g:i a", strtotime($article->created)); ?></td>
+                        <td>
+                            <a href="articles/edit/<?php echo $article->id; ?>" class="btn btn-primary">Edit</a>
+                            <a href="articles/unpublish/<?php echo $article->id; ?>" class="btn btn-dark">Unpublish</a>
+                            <a href="articles/delete<?php echo $article->id; ?>" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                <?php endforeach;?>
               </tbody>
             </table>
           </div>
@@ -49,18 +45,16 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>sit</td>
-                      <td>
-                        <a href="edit_category.html" class="btn btn-primary"
-                          >Edit</a
-                        >
-                        <a href="edit_category.html" class="btn btn-danger"
-                          >Delete</a
-                        >
-                      </td>
-                    </tr>
+                    <?php foreach ($categories as $category): ?>
+                        <tr>
+                            <td><?php echo $category->id; ?></td>
+                            <td><?php echo $category->name; ?></td>
+                            <td>
+                                <a href="categories/edit/<?php echo $category->id; ?>" class="btn btn-primary">Edit</a>
+                                <a href="categories/delete/<?php echo $category->id; ?>" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    <?php endforeach;?>
                   </tbody>
                 </table>
               </div>
@@ -77,18 +71,16 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>sit</td>
-                      <td>
-                        <a href="edit_category.html" class="btn btn-primary"
-                          >Edit</a
-                        >
-                        <a href="edit_category.html" class="btn btn-danger"
-                          >Delete</a
-                        >
-                      </td>
-                    </tr>
+                    <?php foreach ($users as $user): ?>
+                        <tr>
+                            <td><?php echo $user->id; ?></td>
+                            <td><?php echo $user->username; ?></td>
+                            <td>
+                                <a href="users/edit/<?php echo $user->id; ?>" class="btn btn-primary">Edit</a>
+                                <a href="users/delete/<?php echo $user->id; ?>" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    <?php endforeach;?>
                   </tbody>
                 </table>
               </div>
