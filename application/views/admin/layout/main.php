@@ -35,9 +35,7 @@
 
   </head>
   <body>
-    <header
-      class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"
-    >
+    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
       <a class="navbar-brand col-md-3 col-lg-2 me-0 p-0" href="<?php echo base_url(); ?>index.php/admin/dashboard">
           <img src="<?php echo base_url(); ?>assets/images/<?php echo $this->global_data['site_logo'];?>" alt="" width="109px"></a>
       <button
@@ -51,7 +49,22 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <input class="form-control form-control-dark" type="text" id="search_input" placeholder="Search Article..."/>
+
+      <?php $attributes = array('class' => 'navbar-form navbar-right'); ?>
+      <?php echo form_open('admin/articles/index', $attributes); ?>
+      <?php $data = array(
+          'name'        => 'keywords',
+          'class'       => 'form-control',
+          'placeholder' => 'Search Articles...'
+      ); 
+        echo form_input($data);
+      ?>
+      <?php echo form_close(); ?>
+
+
+      <!-- <input class="form-control form-control-dark" type="text" id="search_input" placeholder="Search Article..."/> -->
+      
+      
       <div class="navbar-nav">
         <div class="nav-item text-nowrap" id="dash_nav_link">
           <a class="nav-link px-3" href="<?php echo base_url(); ?>index.php" target="_blank">View Site</a>
@@ -136,6 +149,8 @@
                     <a href="edit_article.html" class="btn btn-dark"
                       >Unpublish</a
                     >
+                          <?php $attributes = array('class' => 'navbar-form navbar-right'); ?>
+
                     <a href="edit_article.html" class="btn btn-danger"
                       >Delete</a
                     >
