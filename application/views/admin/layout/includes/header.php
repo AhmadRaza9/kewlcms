@@ -11,12 +11,12 @@
     />
     <meta name="generator" content="Hugo 0.88.1" />
     <title>Dashboard | Welcome</title>
-    <link rel="shortcut icon" href="../../../assets/images/CMS.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/images/CMS.png" type="image/x-icon" />
 
     <!-- Bootstrap core CSS -->
-    <link href="../../../assets/custom.css" rel="stylesheet" />
-    <link href="../../../assets/bootstrap.css" rel="stylesheet" />
-    <link href="../../../assets/dashboard.css" rel="stylesheet" />
+    <link href="<?php echo base_url(); ?>assets/custom.css" rel="stylesheet" />
+    <link href="<?php echo base_url(); ?>assets/bootstrap.css" rel="stylesheet" />
+    <link href="<?php echo base_url(); ?>assets/dashboard.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
     <style>
@@ -53,15 +53,14 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <?php $attributes = array('class' => 'navbar-form navbar-right');?>
+      <?php $attributes = array('class' => 'navbar-form navbar-right', 'style' => 'flex:1;');?>
       <?php echo form_open('admin/articles/index', $attributes); ?>
       <?php $data = array(
     'name' => 'keywords',
     'class' => 'form-control',
     'placeholder' => 'Search Articles...',
 );
-echo form_input($data);
-?>
+echo form_input($data);?>
       <?php echo form_close(); ?>
 
 

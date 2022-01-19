@@ -58,6 +58,12 @@ class Article_model extends CI_Model
         return true;
     }
 
+    public function update($data, $id)
+    {
+        $this->db->where('id', $id);
+        $this->db->update('articles', $data);
+        return true;
+    }
 }
 
 ?>
