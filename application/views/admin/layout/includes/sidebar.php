@@ -16,7 +16,7 @@
         </a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="http://kewlcms.test/index.php/admin/articles/categories">
+          <a class="nav-link" href="http://kewlcms.test/index.php/admin/categories">
           <span data-feather="shopping-cart"></span>
           <i class="bi bi-tags-fill"></i> Categories
         </a>

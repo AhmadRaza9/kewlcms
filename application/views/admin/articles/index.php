@@ -13,7 +13,7 @@
 
 
 <?php if ($this->session->flashdata('article_deleted')): ?>
-  <?php echo '<p class="alert alert-success mt-2">' . $this->session->flashdata('article_deleted'); ?>
+  <?php echo '<p class="alert alert-danger mt-2">' . $this->session->flashdata('article_deleted'); ?>
 <?php endif;?>
 
 
