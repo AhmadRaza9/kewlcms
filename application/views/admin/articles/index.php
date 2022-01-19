@@ -52,9 +52,9 @@
               <td>
                   <a href="edit/<?php echo $article->id; ?>" class="btn btn-primary">Edit</a>
                   <?php if ($article->is_published == 1): ?>
-                  <a href="unpublish/<?php echo $article->id; ?>" class="btn btn-dark">Unpublish</a>
+                  <a href="http://kewlcms.test/index.php/admin/articles/unpublish/<?php echo $article->id; ?>" class="btn btn-dark">Unpublished</a>
                   <?php elseif ($article->is_published == 0): ?>
-                  <a href="publishe/<?php echo $article->id; ?>" class="btn btn-success">Published</a>
+                  <a href="http://kewlcms.test/index.php/admin/articles/publish/<?php echo $article->id; ?>" class="btn btn-success">Published</a>
                   <?php endif;?>
                   <a href="delete<?php echo $article->id; ?>" class="btn btn-danger">Delete</a>
               </td>

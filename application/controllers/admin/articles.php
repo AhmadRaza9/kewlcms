@@ -101,4 +101,36 @@ class Articles extends MY_Controller
 
     }
 
+    /**
+     * Publish Article
+     * @param - (int) $id
+     */
+
+    public function publish($id)
+    {
+        // Publish Menu Items in array
+        $this->Article_model->publish($id);
+
+        // Create Message
+        $this->session->set_flashdata('article_published', 'Your article has been published');
+
+        // Redirect to
+        header('location: http://kewlcms.test/index.php/admin/articles');
+    }
+
+    /**
+     * Unpublish Article
+     * @param - (int) $id
+     */
+
+    public function unpublish($id)
+    {
+        // unPublish Menu Items in array
+        $this->Article_model->unpublish($id);
+
+        $this->session->set_flashdata('article_unpublished', 'Your article has been unpublished');
+
+        header('location: http://kewlcms.test/index.php/admin/articles');
+    }
+
 }

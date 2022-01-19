@@ -64,6 +64,27 @@ class Article_model extends CI_Model
         $this->db->update('articles', $data);
         return true;
     }
+
+    public function publish($id)
+    {
+        $data = array(
+            'is_published' => 1,
+        );
+
+        $this->db->where('id', $id);
+        $this->db->update('articles', $data);
+    }
+
+    public function unpublish($id)
+    {
+        $data = array(
+            'is_published' => 0,
+        );
+
+        $this->db->where('id', $id);
+        $this->db->update('articles', $data);
+    }
+
 }
 
 ?>
