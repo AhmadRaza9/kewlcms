@@ -81,4 +81,19 @@ class Categories extends MY_Controller
 
     }
 
+    /**
+     * Delete Category
+     * @param - (int) $id
+     */
+
+    public function delete($id)
+    {
+        $this->Article_model->delete_category($id);
+
+        // Create Message
+        $this->session->set_flashdata('category_deleted', 'Your category has been deleted');
+
+        header('location: http://kewlcms.test/index.php/admin/categories');
+    }
+
 }

@@ -127,4 +127,16 @@ class Article_model extends CI_Model
         return $query->row();
     }
 
+    /**
+     * Delete Category
+     * @param - (int) $id
+     */
+
+    public function delete_category($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('categories');
+        return;
+    }
+
 }
