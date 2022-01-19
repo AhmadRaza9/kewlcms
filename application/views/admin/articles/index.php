@@ -45,7 +45,7 @@
       <?php foreach ($articles as $article): ?>
           <tr>
               <td><?php echo $article->id; ?></td>
-              <td><?php echo $article->title; ?></td>
+              <td><?php echo word_limiter($article->title, 6); ?></td>
               <td><?php echo $article->category_name; ?></td>
               <td><?php echo $article->first_name; ?> <?php echo $article->last_name; ?></td>
               <td><?php echo date("F j, Y, g:i a", strtotime($article->created)); ?></td>
