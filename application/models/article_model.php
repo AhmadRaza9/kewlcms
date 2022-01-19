@@ -85,18 +85,11 @@ class Article_model extends CI_Model
         $this->db->update('articles', $data);
     }
 
+    public function delete($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('articles');
+        return true;
+    }
+
 }
-
-?>
-
-<!--
- $articles_model = new Article_model();
- $articles = $articles_model->get_articles();
-
- foreach($articles as $article){
-     echo "<p>$article->title</p>";
-     echo "<p>$article->body</p>";
-     echo "<p>$article->category_name</p>";
-     echo "<p>$article->first_name $article->last_name</p>";
-
- } -->

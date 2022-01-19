@@ -2,18 +2,18 @@
   <?php echo '<p class="alert alert-success mt-2">' . $this->session->flashdata('article_saved'); ?>
 <?php endif;?>
 
-<?php if ($this->session->flashdata('article_published mt-2')): ?>
-  <?php echo '<p class="alert alert-success">' . $this->session->flashdata('article_published'); ?>
+<?php if ($this->session->flashdata('article_published')): ?>
+  <?php echo '<p class="alert alert-success mt-2">' . $this->session->flashdata('article_published'); ?>
 <?php endif;?>
 
 
-<?php if ($this->session->flashdata('article_unpublished mt-2')): ?>
-  <?php echo '<p class="alert alert-success">' . $this->session->flashdata('article_unpublished'); ?>
+<?php if ($this->session->flashdata('article_unpublished')): ?>
+  <?php echo '<p class="alert alert-info mt-2">' . $this->session->flashdata('article_unpublished'); ?>
 <?php endif;?>
 
 
-<?php if ($this->session->flashdata('article_deleted mt-2')): ?>
-  <?php echo '<p class="alert alert-success">' . $this->session->flashdata('article_deleted'); ?>
+<?php if ($this->session->flashdata('article_deleted')): ?>
+  <?php echo '<p class="alert alert-success mt-2">' . $this->session->flashdata('article_deleted'); ?>
 <?php endif;?>
 
 
@@ -56,7 +56,7 @@
                   <?php elseif ($article->is_published == 0): ?>
                   <a href="http://kewlcms.test/index.php/admin/articles/publish/<?php echo $article->id; ?>" class="btn btn-success">Published</a>
                   <?php endif;?>
-                  <a href="delete<?php echo $article->id; ?>" class="btn btn-danger">Delete</a>
+                  <a href="http://kewlcms.test/index.php/admin/articles/delete/<?php echo $article->id; ?>" class="btn btn-danger">Delete</a>
               </td>
           </tr>
       <?php endforeach;?>

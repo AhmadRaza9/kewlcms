@@ -115,7 +115,7 @@ class Articles extends MY_Controller
         $this->session->set_flashdata('article_published', 'Your article has been published');
 
         // Redirect to
-        header('location: http://kewlcms.test/index.php/admin/articles');
+        header('location: http://kewlcms.test/index.php/admin/articles/index');
     }
 
     /**
@@ -130,7 +130,25 @@ class Articles extends MY_Controller
 
         $this->session->set_flashdata('article_unpublished', 'Your article has been unpublished');
 
-        header('location: http://kewlcms.test/index.php/admin/articles');
+        header('location: http://kewlcms.test/index.php/admin/articles/index');
+
+    }
+
+    /**
+     * Delete Article
+     * @param - (int) $id
+     */
+
+    public function delete($id)
+    {
+        $this->Article_model->delete($id);
+
+        // Create Message
+        $this->session->set_flashdata('article_deleted', 'Your article has been deleted');
+
+        // Redirect to articles
+        header('location: http://kewlcms.test/index.php/admin/articles/index');
+
     }
 
 }
