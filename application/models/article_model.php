@@ -92,4 +92,15 @@ class Article_model extends CI_Model
         return true;
     }
 
+    /**
+     * Insert Category
+     * @param - (array) $data
+     */
+
+    public function insert_category($data)
+    {
+        $this->db->insert('categories', $data);
+        return true;
+    }
+
 }

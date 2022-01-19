@@ -1,3 +1,12 @@
+<?php if ($this->session->flashdata('category_saved')): ?>
+    <?php echo "<p class='alert alert-success mt-3'>" . $this->session->flashdata('category_saved'); ?>
+<?php endif;?>
+
+<?php if ($this->session->flashdata('category_deleted')): ?>
+    <?php echo "<p class='alert alert-danger mt-3'>" . $this->session->flashdata('category_deleted'); ?>
+<?php endif;?>
+
+
 <div class="pt-3 pb-2 mb-3 border-bottom">
   <h1 class="h2">Categories</h1>
 </div>
