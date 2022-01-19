@@ -103,4 +103,28 @@ class Article_model extends CI_Model
         return true;
     }
 
+    /**
+     * Update Category
+     * @param - (array) $data
+     * @param - (int) $id
+     */
+
+    public function update_category($data, $id)
+    {
+        $this->db->update('id', $id);
+        $this->db->update('categories', $data);
+        return true;
+    }
+
+    /**
+     * Get Category
+     */
+
+    public function get_category($id)
+    {
+        $this->db->where('id', $id);
+        $query = $this->db->get('categories');
+        return $query->row();
+    }
+
 }
