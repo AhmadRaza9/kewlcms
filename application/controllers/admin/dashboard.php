@@ -3,6 +3,16 @@
 class Dashboard extends MY_Controller
 {
 
+    public function __construct()
+    {
+        parent::__construct();
+        // Access Control
+        if (!$this->session->userdata('logged_in')) {
+            header('location: http://kewlcms.test/index.php/admin/login');
+        }
+
+    }
+
     public function index()
     {
         // Get Articles
