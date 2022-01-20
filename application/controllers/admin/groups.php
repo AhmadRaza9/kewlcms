@@ -38,4 +38,31 @@ class Groups extends MY_Controller
         }
     }
 
+    public function edit($id)
+    {
+        // Validation Rules
+        $this->form_validation->set_rules('name', 'Name', 'trim|required');
+
+        if ($this->form_validation->run() == false) {
+            $data['group'] = $this->User_model->get_group($id);
+
+            // Views
+            $data['main_content'] = 'admin/groups/edit';
+            $this->load->view('admin/layout/main', $data);
+        } else {
+            // Create Data Array
+            $data = array(
+                'name' => $this->input->post('name'),
+            );
+
+            // Table Update
+            $this->User_model->update_group($data, $id);
+
+            // Create Message
+            $this->session->set_flashdata('group_saved', 'Your Group has been saved');
+
+            header('location: http://kewlcms.test/index.php/admin/groups');
+
+        }
+    }
 }
