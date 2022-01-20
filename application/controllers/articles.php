@@ -1,21 +1,23 @@
-<?php 
+<?php
 
-   
-class Articles extends MY_Controller{
-    public function index(){
+class Articles extends MY_Controller
+{
+
+    public function index()
+    {
         // Get Articles
         $data['articles'] = $this->Article_model->get_articles('id', 'DESC', '10');
 
         //Get Menu Items
         $data['menu_items'] = $this->Article_model->get_menu_items();
 
-        
         // Load view
         $this->load->view('home', $data);
 
     }
 
-    public function view($id){
+    public function view($id)
+    {
         // Get Menu ITems
         $data['menu_items'] = $this->Article_model->get_menu_items();
 
@@ -26,5 +28,3 @@ class Articles extends MY_Controller{
         $this->load->view('inner', $data);
     }
 }
-
-?>
