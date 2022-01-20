@@ -1,3 +1,13 @@
+<?php if ($this->session->flashdata('user_saved')): ?>
+    <?php echo '<p class="alert alert-success mt-3"> ' . $this->session->flashdata('user_saved'); ?>
+<?php endif;?>
+
+<?php if ($this->session->flashdata('user_deleted')): ?>
+    <?php echo '<p class="alert alert-success mt-3"> ' . $this->session->flashdata('user_deleted'); ?>
+<?php endif;?>
+
+
+
 <div class="pt-3 pb-2 mb-3 border-bottom">
   <h1 class="h2">Users</h1>
 </div>
@@ -14,8 +24,7 @@
       <tr>
         <th width="70" scope="col">#</th>
         <th scope="col">Username</th>
-        <th scope="col">First Name</th>
-        <th scope="col">Last Name</th>
+        <th scope="col">Full Name</th>
         <th scope="col">Email</th>
         <th scope="col">Created Date</th>
         <th scope="col">Actions</th>
@@ -26,11 +35,10 @@
           <tr>
               <td><?php echo $user->id; ?></td>
               <td><?php echo $user->username; ?></td>
-              <td><?php echo $user->first_name; ?></td>
-              <td><?php echo $user->last_name; ?></td>
+              <td><?php echo $user->first_name . ' ' . $user->last_name; ?></td>
               <td><?php echo $user->email; ?></td>
               <?php $date = strtotime($user->created);?>
-              <td><?php echo date('d/M/Y h:i a', $date); ?></td>
+              <td><?php echo date('d-M-Y h:i a', $date); ?></td>
               <td>
                   <a href="users/edit/<?php echo $user->id; ?>" class="btn btn-primary">Edit</a>
                   <a href="http://kewlcms.test/index.php/admin/users/delete/<?php echo $user->id; ?>" class="btn btn-danger">Delete</a>
