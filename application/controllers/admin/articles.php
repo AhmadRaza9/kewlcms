@@ -4,8 +4,16 @@ class Articles extends MY_Controller
 {
     public function index()
     {
-        // Get Articles
-        $data['articles'] = $this->Article_model->get_articles('id', 'DESC', 10);
+
+        if (!empty($this->input->post('keywords'))) {
+            // Get Filtered Articles
+            $data['articles'] = $this->Article_model->get_filtered_articles($this->input->post('keywords'), 'id', 'DESC', 10);
+
+        } else {
+            // Get Articles
+            $data['articles'] = $this->Article_model->get_articles('id', 'DESC', 10);
+
+        }
 
         // Get Categories
         $data['categories'] = $this->Article_model->get_categories('id', 'DESC', 5);

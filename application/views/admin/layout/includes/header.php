@@ -54,12 +54,11 @@
       </button>
 
       <?php $attributes = array('class' => 'navbar-form navbar-right', 'style' => 'flex:1;');?>
-      <?php echo form_open('admin/articles/index', $attributes); ?>
+      <?php echo form_open('index.php/admin/articles/index', $attributes); ?>
       <?php $data = array(
     'name' => 'keywords',
     'class' => 'form-control',
-    'placeholder' => 'Search Articles...',
-);
+    'placeholder' => 'Search Articles...');
 echo form_input($data);?>
       <?php echo form_close(); ?>
 

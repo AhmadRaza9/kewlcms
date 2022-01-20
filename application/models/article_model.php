@@ -9,6 +9,7 @@
 
 class Article_model extends CI_Model
 {
+
 // Get articles
     public function get_articles($order_by = null, $sort = 'DESC', $limit = null, $offset = 0)
     {
@@ -22,6 +23,28 @@ class Article_model extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
+
+    // Get filtered Articles
+    public function get_filtered_articles($keywords, $order_by = null, $sort = 'DESC', $limit = null, $offset = 0)
+    {
+        $this->db->select('a.*, b.name as category_name, c.first_name, c.last_name');
+        $this->db->from('articles as a');
+        $this->db->join('categories AS b', 'b.id = a.category_id', 'left');
+        $this->db->join('users AS c', 'c.id = a.user_id', 'left');
+        $this->db->like('title', $keywords);
+        $this->db->or_like('body', $keywords);
+
+        if ($limit != null) {
+            $this->db->limit($limit, $offset);
+        }
+        if ($order_by != null) {
+            $this->db->order_by($order_by, $sort);
+        }
+        $query = $this->db->get();
+        return $query->result();
+
+    }
+
     // Get Menu Itemsc
     public function get_menu_items()
     {
