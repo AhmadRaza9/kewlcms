@@ -89,4 +89,15 @@ class Users extends MY_Controller
 
     }
 
+    public function delete($id)
+    {
+        $this->User_model->delete($id);
+
+        // Create Message
+        $this->session->set_flashdata('user_deleted', 'User has been deleted');
+
+        header('location: http://kewlcms.test/index.php/admin/users');
+
+    }
+
 }
