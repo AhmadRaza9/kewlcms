@@ -35,4 +35,17 @@ class Authenticate extends MY_Controller
         }
 
     }
+
+    public function logout()
+    {
+        // UNSET user data
+        $this->session->unset_userdata('logged_in');
+        $this->session->unset_userdata('user_id');
+        $this->session->unset_userdata('username');
+        $this->session->sess_destroy();
+
+        // Set message
+        $this->session->set_flashdata('logged_out', 'You have been logged out');
+        header('location: http://kewlcms.test/index.php/admin/login');
+    }
 }

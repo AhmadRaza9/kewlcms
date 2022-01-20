@@ -69,7 +69,7 @@ echo form_input($data);?>
       <div class="navbar-nav">
         <div class="nav-item text-nowrap" id="dash_nav_link">
           <a class="nav-link px-3" href="<?php echo base_url(); ?>index.php" target="_blank">View Site</a>
-          <a class="nav-link px-3" href="<?php echo base_url(); ?>index.php/admin/users/logout">Log out</a>
+          <a class="nav-link px-3" href="<?php echo base_url(); ?>index.php/admin/logout">Log out</a>
         </div>
       </div>
     </header>
