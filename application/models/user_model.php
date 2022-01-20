@@ -71,4 +71,13 @@ class User_model extends CI_Model
         $this->db->update('groups', $data);
         return true;
     }
+
+    public function delete_group($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('groups');
+        return;
+
+    }
+
 }

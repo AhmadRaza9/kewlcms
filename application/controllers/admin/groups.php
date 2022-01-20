@@ -65,4 +65,14 @@ class Groups extends MY_Controller
 
         }
     }
+
+    public function delete($id)
+    {
+        $this->User_model->delete_group($id);
+
+        // Create Message
+        $this->session->set_flashdata('group_deleted', 'Your Group has been deleted');
+
+        header('location: http://kewlcms.test/index.php/admin/groups');
+    }
 }

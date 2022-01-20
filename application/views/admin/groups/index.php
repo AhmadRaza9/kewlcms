@@ -3,7 +3,7 @@
 <?php endif;?>
 
 <?php if ($this->session->flashdata('group_deleted')): ?>
-    <?php echo "<p class='alert alert-danger mt-3'>" . $this->session->flashdata('category_deleted'); ?>
+    <?php echo "<p class='alert alert-danger mt-3'>" . $this->session->flashdata('group_deleted'); ?>
 <?php endif;?>
 
 
