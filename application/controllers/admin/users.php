@@ -35,7 +35,8 @@ class Users extends MY_Controller
                 'last_name' => $this->input->post('last_name'),
                 'username' => $this->input->post('username'),
                 'email' => $this->input->post('email'),
-                'password' => $this->input->post('password'),
+                'password' => md5($this->input->post('password')),
+                'group_id' => $this->input->post('group'),
             );
 
             // Tablel Insert

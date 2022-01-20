@@ -29,6 +29,13 @@
       </li>
 
       <li class="nav-item">
+        <a class="nav-link <?php if ($this->uri->segment(2) === 'groups') {echo "active";}?>" href="http://kewlcms.test/index.php/admin/groups">
+          <span data-feather="users"></span>
+          <i class="bi bi-people-fill"></i> Users Groups
+        </a>
+      </li>
+
+      <li class="nav-item">
         <a class="nav-link <?php if ($this->uri->segment(2) === 'settings') {echo "active";}?>" href="http://kewlcms.test/index.php/admin/settings">
           <span data-feather="layers"></span>
           <i class="bi bi-gear-fill"></i> Settings

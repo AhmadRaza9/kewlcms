@@ -21,12 +21,20 @@
             <input type="text" class="form-control" name="last_name" placeholder="Enter Last Name">
         </div>
         <div class="mb-3">
+            <label class="form-label"><strong>Username</strong></label>
+            <input type="text" class="form-control" name="username" placeholder="Enter Username">
+        </div>
+        <div class="mb-3">
             <label class="form-label"><strong>Email</strong></label>
             <input type="email" class="form-control" name="email" placeholder="Enter Email Address">
         </div>
         <div class="mb-3">
-            <label class="form-label"><strong>Username</strong></label>
-            <input type="text" class="form-control" name="username" placeholder="Enter Username">
+            <label for="form-label"><strong>User Group</strong></label>
+            <select name="group" class="form-control">
+                <?php foreach($groups as $group) :?>
+                    <option value="<?php echo $group->id; ?>"><?php echo $group->name; ?></option>
+                <?php endforeach; ?>
+            </select>
         </div>
         <div class="mb-3">
             <label class="form-label"><strong>Password</strong></label>
