@@ -16,6 +16,13 @@ class User_model extends CI_Model
         return $query->result();
     }
 
+    public function get_user($id)
+    {
+        $this->db->where('id', $id);
+        $query = $this->db->get('users');
+        return $query->row();
+    }
+
     public function get_groups()
     {
         $this->db->select('*');
@@ -27,6 +34,13 @@ class User_model extends CI_Model
     public function insert($data)
     {
         $this->db->insert('users', $data);
+        return true;
+    }
+
+    public function update($data, $id)
+    {
+        $this->db->where('id', $id);
+        $this->db->update('users', $data);
         return true;
     }
 }
