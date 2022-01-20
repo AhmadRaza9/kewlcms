@@ -13,7 +13,11 @@
     <thead>
       <tr>
         <th width="70" scope="col">#</th>
-        <th scope="col">Name</th>
+        <th scope="col">Username</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Created Date</th>
         <th scope="col">Actions</th>
       </tr>
     </thead>
@@ -21,7 +25,12 @@
       <?php foreach ($users as $user): ?>
           <tr>
               <td><?php echo $user->id; ?></td>
-              <td><?php echo $user->first_name . $user->last_name; ?></td>
+              <td><?php echo $user->username; ?></td>
+              <td><?php echo $user->first_name; ?></td>
+              <td><?php echo $user->last_name; ?></td>
+              <td><?php echo $user->email; ?></td>
+              <?php $date = strtotime($user->created);?>
+              <td><?php echo date('d/M/Y h:i a', $date); ?></td>
               <td>
                   <a href="users/edit/<?php echo $user->id; ?>" class="btn btn-primary">Edit</a>
                   <a href="http://kewlcms.test/index.php/admin/users/delete/<?php echo $user->id; ?>" class="btn btn-danger">Delete</a>
