@@ -51,4 +51,10 @@ class User_model extends CI_Model
         return;
 
     }
+
+    public function insert_group($data)
+    {
+        $this->db->insert('groups', $data);
+        return true;
+    }
 }

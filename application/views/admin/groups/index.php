@@ -23,7 +23,7 @@
     <thead>
     <tr>
         <th width="70">#</th>
-        <th>Username</th>
+        <th>Group Name</th>
         <th>Actions</th>
     </tr>
     </thead>

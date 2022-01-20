@@ -12,4 +12,30 @@ class Groups extends MY_Controller
         $data['main_content'] = 'admin/groups/index';
         $this->load->view('admin/layout/main', $data);
     }
+
+    public function add()
+    {
+        // Validation Rules
+        $this->form_validation->set_rules('name', 'Name', 'trim|required');
+
+        if ($this->form_validation->run() == false) {
+            // Views
+            $data['main_content'] = 'admin/groups/add';
+            $this->load->view('admin/layout/main', $data);
+        } else {
+            // Create Data Array
+            $data = array(
+                'name' => $this->input->post('name'),
+            );
+
+            // Table Insert
+            $this->User_model->insert_group($data);
+
+            // Create Message
+            $this->session->set_flashdata('group_saved', 'Your Group has been saved');
+
+            header('location: http://kewlcms.test/index.php/admin/groups');
+        }
+    }
+
 }
